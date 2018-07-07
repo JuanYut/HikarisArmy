@@ -26,7 +26,9 @@ class App extends Component {
       <Navigation title="Gas Station Report / Colima    " />
 
       <div className="reportHeader">
+
         <ReportForm />
+
       </div>
 
       <div className="reportBody" >
