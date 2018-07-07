@@ -13,8 +13,12 @@ class Report extends Component{
     render(){
         return(
             <div className="Report">
-                <p>{ this.reportName }</p>
-                <p>{ this.reportScore }</p>
+                <h3>{ this.reportName }</h3>
+
+                <span className="badge badge-pill badge-danger ml-2">
+                    {this.reportScore}
+                </span>
+
                 <p>{ this.reportText }</p>
                 <p>{ this.reportEmail }</p>
             </div>

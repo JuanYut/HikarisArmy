@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './doge.png';
 import './App.css';
 
 //  Subcomponentes
 import Report from './Report/Report'
-
+import Navigation from './Navigation/Navigation'
+import ReportForm from './ReportForm/ReportForm'
 
 class App extends Component {
 
@@ -16,26 +16,20 @@ class App extends Component {
         {reportName: 'Colima Centro', reportScore: 4, reportText: 'Tiene un mal servicio2', reportEmail: 'fulano2@gmail.com'},
         {reportName: 'Walmart Tecnologico', reportScore: 3, reportText: 'Gasolina de menos', reportEmail: 'yolanda@gmail.com'}
       ]
-   
     }
   }
 
   render() {
     return (
+    <div className="reportContainer">
 
-      <div className="reportContainer">
+      <Navigation title="Gas Station Report / Colima    " />
 
       <div className="reportHeader">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Gas Station Report / Colima</h1>
+        <ReportForm />
       </div>
 
-      <div className="reportBody">
-
-        <div className="reportForm">
-          <h1>ReportForm</h1>
-        </div>
-
+      <div className="reportBody" >
         <ul>
           {
             this.state.reports.map( report => {
@@ -51,19 +45,15 @@ class App extends Component {
             })
           }
         </ul>
-
       </div>
 
       <div className="reportFooter">
-
+        光 Hikari's Army
       </div>
 
     </div>
 
-
-
     );
   }
 }
-
 export default App;
