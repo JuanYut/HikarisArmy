@@ -1,28 +1,50 @@
-.App {
-  text-align: center;
-}
+/* Imagen Logo */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* Cuerpo */
+
+body {
+  background: #00F260;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  color: white;
+  text-align: center;
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.reportHeader, .reportBody, .reportFooter {
+  background-color: rgba(0, 0, 0, .5);
+  padding: 20px;
+  margin: 0;
+
+}
+
+.reportHeader{
+  font-family: 'Cabin', sans-serif;
+}
+
+.reportBody{
+  margin-top: 20px;
+}
+
+.reportFooter{
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  width: 100%;
 }
