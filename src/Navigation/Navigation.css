@@ -1,0 +1,13 @@
+/* Nav */
+nav {
+  color: white;
+  background-color: #2A5744;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.text-white {
+  color: white;
+  font-size: 40px;
+  font-family: 'Cabin', sans-serif;
+}
