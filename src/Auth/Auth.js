@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import firebase from 'firebase'
-
+import './Auth.css'
 
 class auth extends Component{
     constructor(){
@@ -38,14 +38,17 @@ class auth extends Component{
     renderLoginButton(){
         if(this.state.user){
             return(
-                <div> 
-                   <p> Hola {this.state.user.displayName}</p>
-                   <button onClick ={this.handleLogout}>Salir </button>
-                </div>
+                <div>
+                  <p> Hola {this.state.user.displayName}</p>
+                  <button className="buttonLogout" onClick ={this.handleLogout}>Logout </button>
+               </div>
             );
         }else{
             return(
-            <button onClick = {this.handleAuth} type="submit">Login</button>
+                <div>
+                    <button className="buttonLogin" onClick = {this.handleAuth} type="submit">Login</button>
+                    <h3>Please login to make a report </h3>
+                </div>
             );
         }
     }
