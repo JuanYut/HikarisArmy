@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import firebase from 'firebase'
+import {DB_CONFIG} from './config/config'
+import 'firebase/database'
+
 //  Subcomponentes
 import Report from './Report/Report'
 import Navigation from './Navigation/Navigation'
@@ -11,12 +15,40 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      reports: [
-        {reportName: 'Villa de Alvarez', reportScore: 5, reportText: 'Tiene un mal servicio1', reportEmail: 'fulano1@gmail.com'},
-        {reportName: 'Colima Centro', reportScore: 4, reportText: 'Tiene un mal servicio2', reportEmail: 'fulano2@gmail.com'},
-        {reportName: 'Walmart Tecnologico', reportScore: 3, reportText: 'Gasolina de menos', reportEmail: 'yolanda@gmail.com'}
-      ]
+      reports: []
     }
+
+    this.app = firebase.initializeApp(DB_CONFIG)
+    this.db = this.app.database().ref().child('reports')
+
+    this.addReport = this.addReport.bind(this)
+
+  }
+
+  componentDidMount(){
+    const {reports} = this.state;
+    this.db.on('child_added', snap => {
+      reports.push({
+        reportId: snap.key,
+        reportName: snap.val().reportName,
+        reportScore: snap.val().reportScore,
+        reportText: snap.val().reportText,
+        reportEmail: snap.val().reportEmail
+      })
+      this.setState({reports})
+    });
+
+  }
+
+  addReport(report){
+    console.log(report)
+    this.db.push().set(
+      {reportName: report.selectGas, 
+        reportScore: report.inputScore,
+        reportText: report.textAreaReport,
+        reportEmail: report.inputEmail
+      }
+    )
   }
 
   render() {
@@ -27,21 +59,22 @@ class App extends Component {
 
       <div className="reportHeader">
 
-        <ReportForm />
+        <ReportForm addReport={this.addReport} />
 
       </div>
 
       <div className="reportBody" >
-        <ul>
+        <ul className="reports">
           {
             this.state.reports.map( report => {
               return(
                 <Report 
+                  reportId={report.reportId}
+                  key={report.reportId}
                   reportName={report.reportName}
                   reportScore={report.reportScore}
                   reportText={report.reportText}
                   reportEmail={report.reportEmail}
-                  key={report.reportName}
                 />
               )
             })
@@ -49,12 +82,7 @@ class App extends Component {
         </ul>
       </div>
 
-      <div className="reportFooter">
-        光 Hikari's Army
-      </div>
-
     </div>
-
     );
   }
 }

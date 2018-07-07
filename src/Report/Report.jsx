@@ -8,6 +8,7 @@ class Report extends Component{
         this.reportScore = props.reportScore
         this.reportText = props.reportText
         this.reportEmail = props.reportEmail
+        this.reportId = props.reportId
     }
 
     render(){
@@ -16,7 +17,7 @@ class Report extends Component{
                 <h3>{ this.reportName }</h3>
 
                 <span className="badge badge-pill badge-danger ml-2">
-                    {this.reportScore}
+                    { this.reportScore }
                 </span>
 
                 <p>{ this.reportText }</p>
