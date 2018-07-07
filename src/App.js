@@ -81,16 +81,18 @@ class App extends Component {
 
         <h3>Select a Gas Station</h3>
 
-        <select className="selectGas" id="gasolinera" onChange={this.wachtSelect}>
-          <option value="Villa de Alvarez"> Villa de Alvarez </option>
-          <option value="Colima Centro"> Colima Centro </option>
-          <option value="Walmart Tecnologico"> Walmart Tecnologico </option>
-        </select>
+        <div class="header" id="myHeader">
+          <select className="selectGas" id="gasolinera" onChange={this.wachtSelect}>
+            <option value="Villa de Alvarez"> Villa de Alvarez </option>
+            <option value="Colima Centro"> Colima Centro </option>
+            <option value="Walmart Tecnologico"> Walmart Tecnologico </option>
+          </select>
+        </div>
 
         <ul className="reports">
           {
             //this.wachtSelect
-
+            
             this.state.reportsBy.map( report => {
               return(
                 <Report 
@@ -103,11 +105,9 @@ class App extends Component {
                 />
               )
             })
-            
           }
         </ul>
       </div>
-
     </div>
     );
   }

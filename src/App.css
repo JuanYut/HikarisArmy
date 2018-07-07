@@ -28,6 +28,9 @@ body {
 .reports {
   height: 400px;
   overflow-y: scroll;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 *{
@@ -50,9 +53,21 @@ body {
 
 .reportBody{
   margin-top: 20px;
+  width: 100%;
 }
 
 .selectGas {
   margin-bottom: 5px;
-  width: 51%;
+  width: 100%;
+}
+
+
+/* Style the header */
+.header {
+  padding: 10px 16px;
+  background: #1D976C;;
+  color: white;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
 }
