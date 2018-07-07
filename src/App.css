@@ -51,9 +51,6 @@ body {
   margin-top: 20px;
 }
 
-.reportFooter{
-  bottom: 0;
-  position: fixed;
-  left: 0;
-  width: 100%;
+.selectGas {
+  margin-bottom: 5px;
 }

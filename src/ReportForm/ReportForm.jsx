@@ -17,16 +17,6 @@ class ReportForm extends Component{
             textAreaReport: this.textAreaReport.value,
             inputEmail: this.inputEmail.value
         })
-        // this.props.addReport(this.inputScore.value)
-        // this.props.addReport(this.textAreaReport.value)
-        // this.props.addReport(this.inputEmail.value)
-        // this.props.addReport(
-        //     this.selectGas.value,
-        //     this.inputScore.value,
-        //     this.textAreaReport.value,
-        //     this.inputEmail.value
-        //)
-        //this.inputScore.value =''
     }
 
     render(){
@@ -34,14 +24,19 @@ class ReportForm extends Component{
             <div className="reportForm">
                 <form action="">
                     <h3>Write a report</h3>
-                    <select ref={select => {this.selectGas = select}} id="selectGas" name="country"  >
-                        <option value="villa"> Villa de Alvarez </option>
-                        <option value="centro"> Colima Centro </option>
-                        <option value="tec"> Walmart Tecnologico </option>
-                    </select>
-                    <input ref={input => {this.inputScore = input}} type="text" id="inputScore" name="score" placeholder="Score" />
-                    <textarea ref={textarea => {this.textAreaReport = textarea}} type="text" id="textAreaReport" name="report" placeholder="Write your experience" />
-                    <input ref={input => {this.inputEmail = input}} type="text" id="inputEmail" name="email" placeholder="Email ex: juan@gmail.com" />
+                    <div id="1">
+                        <select ref={select => {this.selectGas = select}} id="selectGas" name="country">
+                            <option value="Villa de Alvarez"> Villa de Alvarez </option>
+                            <option value="Colima Centro"> Colima Centro </option>
+                            <option value="Walmart Tecnologico"> Walmart Tecnologico </option>
+                        </select>
+                        <input ref={input => {this.inputScore = input}} type="text" id="inputScore" name="score" placeholder="Score" />
+                    </div>
+
+                    <div id="2">
+                        <textarea ref={textarea => {this.textAreaReport = textarea}} type="text" id="textAreaReport" name="report" placeholder="Write your experience" />
+                        <input ref={input => {this.inputEmail = input}} type="text" id="inputEmail" name="email" placeholder="Email ex: juan@gmail.com" />
+                    </div>
 
                     <input type="submit" id="inputSubmit" value="Send Report" onClick={this.addReport} />
                 </form>

@@ -4,7 +4,7 @@ import './Navigation.css'
 
 const Navigation = (props) => (
     <nav className="navbar navbar-dark bg-dark">
-      <a className="text-white">
+      <a  className="text-white">
           { props.title }
       </a>
       <img src={logo} className="App-logo" alt="logo" />
