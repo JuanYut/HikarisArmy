@@ -9,6 +9,7 @@ import 'firebase/database'
 import Report from './Report/Report'
 import Navigation from './Navigation/Navigation'
 import ReportForm from './ReportForm/ReportForm'
+import Auth from './Auth/Auth'
 
 class App extends Component {
 
@@ -67,6 +68,8 @@ class App extends Component {
     <div className="reportContainer">
 
       <Navigation title="Gas Station Report / Colima    " />
+
+      
 
       <div className="reportHeader">
 
