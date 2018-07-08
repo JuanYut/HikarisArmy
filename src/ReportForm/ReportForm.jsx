@@ -3,27 +3,37 @@ import './ReportForm.css'
 
 class ReportForm extends Component{
 
+    state = {
+        rating: 0
+    } 
+
     constructor(props){
         super(props)
         this.addReport = this.addReport.bind(this)
+        this.wachtStart = this.wachtStart.bind(this)
+        const scoreStart = ''
     }
 
     addReport(event){
         event.preventDefault()
-        //console.log(this.selectGas.value)
+        const rating = this.state.rating;
         this.props.addReport({
             selectGas: this.selectGas.value,
-            inputScore: this.inputScore.value,
+            inputScore: rating,
             textAreaReport: this.textAreaReport.value,
             inputEmail: this.inputEmail.value
         })
 
-        this.inputScore.value = ''
         this.textAreaReport.value = ''
         this.inputEmail.value = ''
-        alert("Report Sended. Keep doing better your community, thanks :)")
 
+    }
 
+    wachtStart(ev){
+        console.log(ev.target)
+        const scoreStart = ev.target.value
+        console.log(scoreStart)
+        this.setState({rating: scoreStart})
     }
 
     render(){
@@ -39,7 +49,21 @@ class ReportForm extends Component{
                             <option value="Walmart Tecnologico"> Walmart Tecnologico </option>
                         </select>
 
-                        <input ref={input => {this.inputScore = input}} type="text" id="inputScore" name="score" placeholder="Score" />
+                        <form>
+                            <p class="clasificacion">
+                                    <label htmlFor="radio1">★</label>
+                                <input id="radio1" type="radio" name="estrellas" value="5" onChange={this.wachtStart} />
+                                    <label htmlFor="radio2">★</label>
+                                <input id="radio2" type="radio" name="estrellas" value="4" onChange={this.wachtStart} />
+                                    <label htmlFor="radio3">★</label>
+                                <input id="radio3" type="radio" name="estrellas" value="3" onChange={this.wachtStart} />
+                                    <label htmlFor="radio4">★</label>
+                                <input id="radio4" type="radio" name="estrellas" value="2" onChange={this.wachtStart} />
+                                    <label htmlFor="radio5">★</label>
+                                <input id="radio5" type="radio" name="estrellas" value="1" onChange={this.wachtStart} />
+                            </p>
+                        </form>
+                        
                         <textarea ref={textarea => {this.textAreaReport = textarea}} type="text" id="textAreaReport" name="report" placeholder="Write your experience" />
                         <input ref={input => {this.inputEmail = input}} type="text" id="inputEmail" name="email" placeholder="Email ex: juan@gmail.com" />
                     </div>
