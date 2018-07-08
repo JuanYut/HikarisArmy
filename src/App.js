@@ -7,8 +7,8 @@ import 'firebase/database'
 
 //  Subcomponentes
 import Report from './Report/Report'
-import Navigation from './Navigation/Navigation'
 import ReportForm from './ReportForm/ReportForm'
+import Navigation from './Navigation/Navigation'
 import Auth from './Auth/Auth'
 
 class App extends Component {
@@ -17,7 +17,8 @@ class App extends Component {
     super()
     this.state = {
       reports: [],
-      reportsBy: []
+      reportsBy: [],
+      isLogged: false,
     }
 
     this.app = firebase.initializeApp(DB_CONFIG)
@@ -46,6 +47,7 @@ class App extends Component {
   addReport(report){
     console.log(report)
     if(report.inputScore != '' && report.textAreaReport != '' && report.inputEmail != ''){
+      alert("Report Sended. Keep doing better your community, thanks :)")
       this.db.push().set(
         {reportName: report.selectGas, 
           reportScore: report.inputScore,
@@ -53,6 +55,7 @@ class App extends Component {
           reportEmail: report.inputEmail
         }
       )
+      
     }
   }
 
@@ -63,20 +66,16 @@ class App extends Component {
     console.log(reportN)
   }
 
+
+
   render() {
     return (
     <div className="reportContainer">
 
-      <Navigation title="Gas Station Report / Colima    " />
+      <Navigation title="Gas Station Report / Colima    " addReport={this.addReport} />
 
-      
-
-      <div className="reportHeader">
-
-        <ReportForm addReport={this.addReport} />
-
-      </div>
-
+      {/* <ReportForm addReport={this.addReport} /> */}
+        
       <div className="reportBody" >
 
         <h3>Select a Gas Station</h3>

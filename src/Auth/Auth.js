@@ -17,7 +17,7 @@ class auth extends Component{
         firebase.auth().onAuthStateChanged(user => {
             this.setState({
                 user:user 
-            });
+            }, () => this.props.setUserData(user));
         });
     }
 
@@ -39,7 +39,7 @@ class auth extends Component{
         if(this.state.user){
             return(
                 <div>
-                  <p> Hola {this.state.user.displayName}</p>
+                  <p> Hola1 {this.state.user.displayName}</p>
                   <button className="buttonLogout" onClick ={this.handleLogout}>Logout </button>
                </div>
             );
