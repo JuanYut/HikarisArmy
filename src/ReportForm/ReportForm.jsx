@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './ReportForm.css'
-import Auth from '../Auth/Auth'
+
 
 class ReportForm extends Component{
 
@@ -12,18 +12,20 @@ class ReportForm extends Component{
         super(props)
         this.addReport = this.addReport.bind(this)
         this.wachtStart = this.wachtStart.bind(this)
-        const scoreStart = ''
+
     }
 
     addReport(event){
         event.preventDefault()
+        var f = new Date();
+        var date = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
         const rating = this.state.rating;
         this.props.addReport({
             selectGas: this.selectGas.value,
             inputScore: rating,
             textAreaReport: this.textAreaReport.value,
             inputEmail: this.inputEmail.value,
-            inputDate: this.inputDate.value
+            inputDate: date
         })
 
         this.textAreaReport.value = ''
@@ -69,13 +71,15 @@ class ReportForm extends Component{
                         
                         <textarea ref={textarea => {this.textAreaReport = textarea}} type="text" id="textAreaReport" name="report" placeholder="Write your experience" />
                         <input ref={input => {this.inputEmail = input}} type="text" id="inputEmail" name="email" placeholder="Email ex: juan@gmail.com" />
-                        <input ref={input => {this.inputDate = input}} type="Date" id="inputDate" name="date"  />
+                        
                     </div>
 
                     <input type="submit" id="inputSubmit" value="Send Report" onClick={this.addReport} />
                 </form>
-            </div>                
 
+               
+            </div>                
+             
         );
     }
 }
