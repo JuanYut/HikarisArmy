@@ -56,16 +56,17 @@ class ReportForm extends Component{
                         <form>
                             <p class="clasificacion">
                             
-                                     <label htmlFor="radio1">★</label>
                                 <input id="radio1" type="radio" name="estrellas" value="★★★★★" onChange={this.wachtStart} />
-                                    <label htmlFor="radio2">★</label>
+                                    <label htmlFor="radio1">★</label>
                                 <input id="radio2" type="radio" name="estrellas" value="★★★★" onChange={this.wachtStart} />
-                                    <label htmlFor="radio3">★</label>
+                                    <label htmlFor="radio2">★</label>
                                 <input id="radio3" type="radio" name="estrellas" value="★★★" onChange={this.wachtStart} />
-                                    <label htmlFor="radio4">★</label>
+                                    <label htmlFor="radio3">★</label>
                                 <input id="radio4" type="radio" name="estrellas" value="★★" onChange={this.wachtStart} />
-                                    <label htmlFor="radio5">★</label>
+                                    <label htmlFor="radio4">★</label>
                                 <input id="radio5" type="radio" name="estrellas" value="★" onChange={this.wachtStart} />
+                                    <label htmlFor="radio5">★</label>
+
                             </p>
                         </form>
                         
