@@ -4,6 +4,7 @@ import './Navigation2.css'
 import Auth from '../Auth/Auth'
 import ReportForm from '../ReportForm/ReportForm'
 
+
 export default class Navigation extends Component  {
     state = {
         user: null,

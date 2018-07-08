@@ -9,6 +9,7 @@ class Report extends Component{
         this.reportText = props.reportText
         this.reportEmail = props.reportEmail
         this.reportId = props.reportId
+        this.reportDate = props.reportDate
     }
 //Hola si funko :D
     render(){
@@ -22,6 +23,8 @@ class Report extends Component{
 
                 <p>{ this.reportText }</p>
                 <p>{ this.reportEmail }</p>
+                <p>{ this.reportDate }</p>
+
             </div>
         )
     }

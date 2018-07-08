@@ -40,7 +40,7 @@ body {
   background-color: white;
 }
 
-.reportHeader, .reportBody, .reportFooter {
+.reportHeader, .reportBody, .reportFooter .gasScore{
   background-color: black;
   padding: 20px;
   margin: 0;
@@ -62,6 +62,14 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+.gasScore{
+  background-color: black;
+  margin-top: 20px;
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 
 h3.label{
   font-family: 'Lobster', cursive;

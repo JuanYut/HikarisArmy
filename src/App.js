@@ -10,6 +10,7 @@ import Report from './Report/Report'
 import Navigation2 from './Navigation2/Navigation2'
 import ReportForm from './ReportForm/ReportForm'
 import Auth from './Auth/Auth'
+import DataGas from './DataGas/dataGas'
 
 class App extends Component {
 
@@ -37,7 +38,8 @@ class App extends Component {
         reportName: snap.val().reportName,
         reportScore: snap.val().reportScore,
         reportText: snap.val().reportText,
-        reportEmail: snap.val().reportEmail
+        reportEmail: snap.val().reportEmail,
+        reportDate: snap.val().reportDate
       })
       const initialFilterBy = reports.filter(report => report.reportName == 'Villa de Alvarez')
       this.setState({reports, reportsBy: initialFilterBy})
@@ -46,13 +48,15 @@ class App extends Component {
 
   addReport(report){
     console.log(report)
+    
     if(report.inputScore != '' && report.textAreaReport != '' && report.inputEmail != ''){
       alert("Report Sended. Keep doing better your community, thanks :)")
       this.db.push().set(
         {reportName: report.selectGas, 
           reportScore: report.inputScore,
           reportText: report.textAreaReport,
-          reportEmail: report.inputEmail
+          reportEmail: report.inputEmail,
+          reportDate: report.inputDate
         }
       )
     }
@@ -67,14 +71,18 @@ class App extends Component {
 
   render() {
     return (
+
       <div className="reportContainer">
 
       <Navigation2 title="Gas Station Report / Colima    " addReport={this.addReport} />
-
+      
       {/* <ReportForm addReport={this.addReport} /> */}
-        
-      <div className="reportBody" >
 
+     
+
+
+      <div className="reportBody" >
+        
         <h3 className="label">Select a Gas Station</h3>
 
         <div class="header" id="myHeader">
@@ -98,7 +106,9 @@ class App extends Component {
                   reportScore={report.reportScore}
                   reportText={report.reportText}
                   reportEmail={report.reportEmail}
+                  reportDate={report.reportDate}
                 />
+                
               )
             })
           }
