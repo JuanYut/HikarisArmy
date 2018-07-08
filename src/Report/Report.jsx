@@ -10,7 +10,7 @@ class Report extends Component{
         this.reportEmail = props.reportEmail
         this.reportId = props.reportId
     }
-
+//Hola si funko :D
     render(){
         return(
             <div className="Report">

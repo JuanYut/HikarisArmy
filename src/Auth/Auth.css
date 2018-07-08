@@ -1,28 +1,62 @@
 .buttonLogin {
-    background-color: #0080FF;
-    color: white;
-    padding: 12px 20px;
+    float: right;
+    background-color: rgb(26, 194, 32); /* Green */
     border: none;
-    border-radius: 4px;
+    color: black;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    color: #FFF;
+    border-radius: 8px;
+    line-height: 20px;
+    margin-top: 15px;
+    align-items: center;
+    margin-right: 2%;
+    margin-left:  0%;
     cursor: pointer;
-    margin-top: 20px;
  }
  
  .buttonLogin:hover {
-    background-color: #0174DF
+    background-color: rgb(58, 173, 62);
  }
- 
+
  .buttonLogout {
+    float: right;
     background-color: #EC5231;
-    color: white;
-    padding: 12px 20px;
     border: none;
-    border-radius: 4px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    color: #FFF;
+    border-radius: 8px;
+    line-height: 20px;
+    margin-top: 15px;
+    align-items: center;
+    margin-right: 2%;
+    margin-left:  0%;
     cursor: pointer;
-    margin-top: 20px;
  }
  
  .buttonLogout:hover {
     background-color: #D74A2C;
  }
  
+ @media (max-width:1000px)  {
+
+    .buttonLogin{
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+
+    .buttonLogout{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+}

@@ -1,6 +1,6 @@
 import React, {Fragment, Component} from 'react'
 import logo from '../gasstation1.png';
-import './Navigation.css'
+import './Navigation2.css'
 import Auth from '../Auth/Auth'
 import ReportForm from '../ReportForm/ReportForm'
 
@@ -20,13 +20,18 @@ export default class Navigation extends Component  {
     render() {
         const {props} = this;
         return (
-            <Fragment>  
-                <nav className="navbar navbar-dark bg-dark">
-                <a  className="text-white">
-                    { props.title }
-                </a>
-                <img src={logo} className="App-logo" alt="logo" />
-                <Auth setUserData={this.setUserData} />
+            <Fragment>
+                <nav className="navbar">
+                    <ul className="nav" id="primary-nav">
+                        <h1 className="logo">Gas_Station_Report_Colima</h1>
+                        <div>
+                            <img className="logoHikari" src={logo}/>
+                        </div>
+                        <Auth setUserData={this.setUserData} />
+                        {/* <button className="nav-item" type="button" onClick={<Auth setUserData={this.setUserData} />}> Login </button> */}
+                        
+                        
+                    </ul>
                 </nav>
                 { this.state.user &&
                     <div className="reportHeader">
@@ -37,3 +42,4 @@ export default class Navigation extends Component  {
         )
     }
 };
+//<li className="nav-item"><a href="">Login</a></li>

@@ -1,0 +1,142 @@
+   .navbar {
+    width: 100%;
+    background-color:black;
+    height: 80px;
+    color: #fff;
+    margin-bottom:  20px;
+    font-size: 1em;
+   }
+   
+   .logo {
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    display: block;
+    color: #fff;
+    float: left;
+    height: 50px;
+    padding: 15px 40px;
+    font-size: 1.5em;
+    line-height: 50px;    
+    margin-right: 0%;
+    margin-left:  2%;
+   }
+   
+   .logoHikari {
+    display: block;
+    animation: App-logo-spin infinite 20s linear;
+    height: 50px;
+    float: left;
+    margin-right: 1%;
+    margin-top: 12px;
+    
+   }
+   
+   /* Imagen Logo */
+   @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+   }
+   
+   .navbar .nav {
+    margin: 0;
+    padding: auto;
+    list-style-type: none;
+   }
+   
+   .navbar .nav .nav-item {
+    float: right;
+   }
+   
+   .navbar .nav .nav-item > a {
+    display: inline-block;
+    padding: 15px 20px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    text-decoration: none;
+   }
+
+   h3.nav-item{
+    font-family: 'Raleway', sans-serif;
+    float: right;
+    line-height: 70px;
+    margin-right: 1%;
+    margin-left:  1%;
+   }
+
+   button.nav-item{
+    float: right;
+    background-color: rgb(26, 194, 32); /* Green */
+    border: none;
+    color: black;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    color: #FFF;
+    border-radius: 8px;
+    line-height: 20px;
+    margin-top: 15px;
+    align-items: center;
+    margin-right: 2%;
+    margin-left:  0%;
+    cursor: pointer;
+   }
+
+   button.nav-item:hover {
+    background-color: rgb(58, 173, 62);
+   }
+
+    @media (max-width:1000px)  {
+        .navbar{
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            align-items: center;
+        }
+        .nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav img .logo {
+            max-height: 50px;
+            align-items: center;
+        }
+
+        .logo{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin-bottom: 10px;
+        }
+
+        .nav-item{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+
+        h3.nav-item{
+            margin-bottom: 20px;
+        }
+
+        .logoHikari{
+            margin-bottom: 10px;
+        }
+
+        .buttonLogin{
+            display: flex;
+            align-content: center;
+            align-items: center;
+        }
+    
+        .buttonLogout{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+
+    }

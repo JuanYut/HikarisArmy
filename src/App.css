@@ -17,10 +17,8 @@
 /* Cuerpo */
 
 body {
-  background: #1D976C;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: white;  /* fallback for old browsers */
+  
   color: white;
   text-align: center;
 }
@@ -28,7 +26,7 @@ body {
 .reports {
   height: 400px;
   overflow-y: scroll;
-  width: 50%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -38,22 +36,35 @@ body {
   margin: 0;
 }
 
+.reportContainer{
+  background-color: white;
+}
+
 .reportHeader, .reportBody, .reportFooter {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: black;
   padding: 20px;
   margin: 0;
 
 }
 
 .reportHeader{
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Lobster', cursive;
   text-align: center;
-  width: 100%;
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .reportBody{
+  background-color: black;
   margin-top: 20px;
-  width: 100%;
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h3.label{
+  font-family: 'Lobster', cursive;
 }
 
 .selectGas {
@@ -65,9 +76,9 @@ body {
 /* Style the header */
 .header {
   padding: 10px 16px;
-  background: #1D976C;;
+  background: white;
   color: white;
-  width: 50%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }

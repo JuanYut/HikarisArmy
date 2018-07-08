@@ -34,20 +34,19 @@ class auth extends Component{
         .catch(error => console.log (`Error ${error.code}: ${error.message}`));
     }
 
-
     renderLoginButton(){
         if(this.state.user){
             return(
                 <div>
-                  <p> Hola1 {this.state.user.displayName}</p>
-                  <button className="buttonLogout" onClick ={this.handleLogout}>Logout </button>
+                    <button className="buttonLogout" onClick ={this.handleLogout}>Logout </button>
+                    <h3 className="nav-item">{this.state.user.displayName}</h3>
                </div>
-            );
+            );  
         }else{
             return(
                 <div>
                     <button className="buttonLogin" onClick = {this.handleAuth} type="submit">Login</button>
-                    <h3>Please login to make a report </h3>
+                    <h3 className="nav-item">Access with Google</h3>
                 </div>
             );
         }

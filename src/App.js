@@ -7,8 +7,8 @@ import 'firebase/database'
 
 //  Subcomponentes
 import Report from './Report/Report'
+import Navigation2 from './Navigation2/Navigation2'
 import ReportForm from './ReportForm/ReportForm'
-import Navigation from './Navigation/Navigation'
 import Auth from './Auth/Auth'
 
 class App extends Component {
@@ -55,7 +55,6 @@ class App extends Component {
           reportEmail: report.inputEmail
         }
       )
-      
     }
   }
 
@@ -66,19 +65,17 @@ class App extends Component {
     console.log(reportN)
   }
 
-
-
   render() {
     return (
-    <div className="reportContainer">
+      <div className="reportContainer">
 
-      <Navigation title="Gas Station Report / Colima    " addReport={this.addReport} />
+      <Navigation2 title="Gas Station Report / Colima    " addReport={this.addReport} />
 
       {/* <ReportForm addReport={this.addReport} /> */}
         
       <div className="reportBody" >
 
-        <h3>Select a Gas Station</h3>
+        <h3 className="label">Select a Gas Station</h3>
 
         <div class="header" id="myHeader">
           <select className="selectGas" id="gasolinera" onChange={this.wachtSelect}>

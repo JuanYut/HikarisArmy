@@ -22,7 +22,7 @@ label {
 }
 
 input[type=submit] {
-    background-color: #0080FF;
+    background-color: rgb(16, 119, 236);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -32,7 +32,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #0174DF
+    background-color: rgb(13, 104, 207);
 }
 
 .container {
@@ -69,7 +69,8 @@ input[type=submit]:hover {
 }
 
 .reportForm{
-    width: 50%;
+    font-family: 'Lobster', cursive;
+    width: 100%;
     margin-right:auto;
     margin-left:auto;
 }

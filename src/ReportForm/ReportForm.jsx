@@ -21,7 +21,7 @@ class ReportForm extends Component{
         this.inputScore.value = ''
         this.textAreaReport.value = ''
         this.inputEmail.value = ''
-      
+        alert("Report Sended. Keep doing better your community, thanks :)")
 
 
     }
@@ -33,7 +33,7 @@ class ReportForm extends Component{
                     <h3>Write a report</h3>
                 
                     <div id="1">
-                        <select ref={select => {this.selectGas = select}} id="selectGas" name="country" >
+                        <select ref={select => {this.selectGas = select}} id="selectGas" name="country">
                             <option value="Villa de Alvarez"> Villa de Alvarez </option>
                             <option value="Colima Centro"> Colima Centro </option>
                             <option value="Walmart Tecnologico"> Walmart Tecnologico </option>
